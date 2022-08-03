@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/startFragment">
+
+    <fragment
+        android:id="@+id/noInternetFragment"
+        android:name="com.serioussem.webviewexample.presentation.screens.NoInternetFragment"
+        android:label="no_internet_fragment"
+        tools:layout="@layout/no_internet_fragment" />
+    <fragment
+        android:id="@+id/startFragment"
+        android:name="com.serioussem.webviewexample.presentation.screens.StartFragment"
+        android:label="start_fragment"
+        tools:layout="@layout/start_fragment" >
+        <action
+            android:id="@+id/action_startFragment_to_webViewFragment"
+            app:destination="@id/webViewFragment" />
+        <action
+            android:id="@+id/action_startFragment_to_noInternetFragment"
+            app:destination="@id/noInternetFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/webViewFragment"
+        android:name="com.serioussem.webviewexample.presentation.screens.WebViewFragment"
+        android:label="web_view_fragment"
+        tools:layout="@layout/web_view_fragment" />
+</navigation>
